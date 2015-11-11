@@ -10,11 +10,15 @@ import Foundation
 import UIKit
 import CoreMotion
 import SQLite
+import CoreLocation
 
-class ViewController: UIViewController {
-    
+
+let m2fc = 3.28084
+
+class ViewController: UIViewController, CLLocationManagerDelegate {
     var opQ: NSOperationQueue
     var ca: CMAltimeter?
+    var cl: CLLocationManager?
     
     @IBOutlet var ridebg: UIImageView?
     @IBOutlet var mtnfront: UIImageView?
@@ -32,7 +36,17 @@ class ViewController: UIViewController {
     
     required init?(coder aDecoder: NSCoder) {
         opQ = NSOperationQueue()
+        cl = CLLocationManager()
         super.init(coder: aDecoder)
+        cl?.delegate = self
+    }
+    
+    @IBAction func start(target: AnyObject?) -> Void {
+        
+    }
+    
+    @IBAction func stop(target: AnyObject?) -> Void {
+        
     }
     
     override func viewDidLoad() {

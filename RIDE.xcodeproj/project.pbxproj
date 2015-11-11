@@ -221,6 +221,11 @@
 					22ED9E4F1BEF120800A1DE1F = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = FVYDA5829M;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					22ED9E631BEF120800A1DE1F = {
 						CreatedOnToolsVersion = 7.1;

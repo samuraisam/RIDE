@@ -66,6 +66,11 @@
                                     <constraint firstAttribute="height" constant="570" id="vys-Jt-RQn"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qdp-ud-2bo">
+                                <rect key="frame" x="21" y="581" width="333" height="59"/>
+                                <animations/>
+                                <state key="normal" title="lets ride" backgroundImage="btn-cir"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -73,8 +78,10 @@
                             <constraint firstItem="IKm-qq-Gs0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="174" id="8Y2-yb-rpW"/>
                             <constraint firstItem="7rU-Fb-H5j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="110" id="Cd3-pJ-ijt"/>
                             <constraint firstItem="7rU-Fb-H5j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="161" id="Ebp-uu-A4F"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qdp-ud-2bo" secondAttribute="bottom" constant="27" id="Jc4-LD-236"/>
                             <constraint firstItem="Ohb-Xo-rZ8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="KMy-Hz-wQ3"/>
                             <constraint firstItem="Rq6-Lq-Hit" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-53" id="KU2-tB-s0z"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Qdp-ud-2bo" secondAttribute="trailing" constant="15" id="bWF-Ei-0xF"/>
                             <constraint firstItem="VzP-T1-MJU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="195" id="eFx-hU-jUd"/>
                             <constraint firstItem="IKm-qq-Gs0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="43" id="mP8-Nx-szh"/>
                             <constraint firstItem="7rU-Fb-H5j" firstAttribute="leading" secondItem="reG-gG-ZW6" secondAttribute="trailing" id="n0t-Mo-t4x"/>
@@ -84,6 +91,7 @@
                             <constraint firstItem="VzP-T1-MJU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-81" id="qPo-TX-XVT"/>
                             <constraint firstItem="reG-gG-ZW6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="195" id="rQE-Kk-rCS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7rU-Fb-H5j" secondAttribute="trailing" constant="-2" id="typ-U4-rFQ"/>
+                            <constraint firstItem="Qdp-ud-2bo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="ucl-e9-jhW"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -108,6 +116,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btn-cir" width="279" height="59"/>
         <image name="mgn-left-mid" width="278" height="408"/>
         <image name="mtn-front" width="555" height="570"/>
         <image name="mtn-left-bg" width="295" height="408"/>
