@@ -70,19 +70,40 @@
                                 <rect key="frame" x="21" y="581" width="333" height="59"/>
                                 <animations/>
                                 <state key="normal" title="lets ride" backgroundImage="btn-cir"/>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CY1-r3-6b6"/>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="total feet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhD-O1-DRn">
+                                <rect key="frame" x="0.0" y="451" width="375" height="63"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeJ-dq-fnr">
+                                <rect key="frame" x="0.0" y="406" width="375" height="55"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="52"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XhD-O1-DRn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="1tU-na-KO7"/>
+                            <constraint firstItem="Qdp-ud-2bo" firstAttribute="top" secondItem="eeJ-dq-fnr" secondAttribute="bottom" constant="120" id="5SA-It-wdB"/>
                             <constraint firstItem="IKm-qq-Gs0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="174" id="8Y2-yb-rpW"/>
                             <constraint firstItem="7rU-Fb-H5j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="110" id="Cd3-pJ-ijt"/>
                             <constraint firstItem="7rU-Fb-H5j" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="161" id="Ebp-uu-A4F"/>
+                            <constraint firstItem="eeJ-dq-fnr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="HPB-Se-8bB"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Qdp-ud-2bo" secondAttribute="bottom" constant="27" id="Jc4-LD-236"/>
                             <constraint firstItem="Ohb-Xo-rZ8" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="KMy-Hz-wQ3"/>
                             <constraint firstItem="Rq6-Lq-Hit" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-53" id="KU2-tB-s0z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qdp-ud-2bo" secondAttribute="trailing" constant="15" id="bWF-Ei-0xF"/>
                             <constraint firstItem="VzP-T1-MJU" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="195" id="eFx-hU-jUd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eeJ-dq-fnr" secondAttribute="trailing" constant="-20" id="fbD-ja-xW1"/>
                             <constraint firstItem="IKm-qq-Gs0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="43" id="mP8-Nx-szh"/>
                             <constraint firstItem="7rU-Fb-H5j" firstAttribute="leading" secondItem="reG-gG-ZW6" secondAttribute="trailing" id="n0t-Mo-t4x"/>
                             <constraint firstItem="Ohb-Xo-rZ8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-144" id="nUp-mT-iuB"/>
@@ -90,7 +111,9 @@
                             <constraint firstAttribute="bottomMargin" secondItem="Rq6-Lq-Hit" secondAttribute="bottom" constant="-29" id="ps0-tT-RLG"/>
                             <constraint firstItem="VzP-T1-MJU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-81" id="qPo-TX-XVT"/>
                             <constraint firstItem="reG-gG-ZW6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="195" id="rQE-Kk-rCS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XhD-O1-DRn" secondAttribute="trailing" constant="-20" id="t4T-Rz-n20"/>
                             <constraint firstAttribute="trailingMargin" secondItem="7rU-Fb-H5j" secondAttribute="trailing" constant="-2" id="typ-U4-rFQ"/>
+                            <constraint firstItem="Qdp-ud-2bo" firstAttribute="top" secondItem="XhD-O1-DRn" secondAttribute="bottom" constant="67" id="u4W-H7-D4Q"/>
                             <constraint firstItem="Qdp-ud-2bo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="ucl-e9-jhW"/>
                         </constraints>
                         <variation key="default">
@@ -107,6 +130,8 @@
                         <outlet property="mtnleftmid" destination="reG-gG-ZW6" id="7ce-eX-PNT"/>
                         <outlet property="mtnrightbg" destination="7rU-Fb-H5j" id="OSU-Qm-TkH"/>
                         <outlet property="mtnrightmid" destination="IKm-qq-Gs0" id="uqh-T9-a5Z"/>
+                        <outlet property="readout" destination="eeJ-dq-fnr" id="UO6-Pf-gZ0"/>
+                        <outlet property="readoutLabel" destination="XhD-O1-DRn" id="Qbj-B5-PUI"/>
                         <outlet property="ridebg" destination="Ohb-Xo-rZ8" id="dIe-fh-7WF"/>
                     </connections>
                 </viewController>

@@ -19,6 +19,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var opQ: NSOperationQueue
     var ca: CMAltimeter?
     var cl: CLLocationManager?
+    var started: Bool = false
+    var total: Float = 0
+    var current: Float = 0
     
     @IBOutlet var ridebg: UIImageView?
     @IBOutlet var mtnfront: UIImageView?
@@ -26,6 +29,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var mtnleftmid: UIImageView?
     @IBOutlet var mtnrightbg: UIImageView?
     @IBOutlet var mtnrightmid: UIImageView?
+    @IBOutlet var readout: UILabel?
+    @IBOutlet var readoutLabel: UILabel?
     
     var bgMotionEffect: UIMotionEffectGroup?
     var fgMotionEffect: UIMotionEffectGroup?
@@ -37,20 +42,55 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     required init?(coder aDecoder: NSCoder) {
         opQ = NSOperationQueue()
         cl = CLLocationManager()
+        ca = CMAltimeter()
         super.init(coder: aDecoder)
         cl?.delegate = self
+        
+        let ud = NSUserDefaults.standardUserDefaults()
+        total = ud.floatForKey("total")
     }
     
     @IBAction func start(target: AnyObject?) -> Void {
-        
-    }
-    
-    @IBAction func stop(target: AnyObject?) -> Void {
-        
+        if let btn = target as? UIButton {
+            if started {
+                cl?.stopUpdatingLocation()
+                ca?.stopRelativeAltitudeUpdates()
+                btn.setTitle(NSLocalizedString("lets ride", comment: ""), forState: .Normal)
+                total += current
+                NSUserDefaults.standardUserDefaults().setFloat(total, forKey: "total")
+                current = 0
+                readoutLabel?.text = "total feet"
+                let tf = total*Float(m2fc)
+                readout?.text = "\(tf)"
+            } else {
+                if CMAltimeter.isRelativeAltitudeAvailable() {
+                    readout?.text = "0.0"
+                    readoutLabel?.text = "current feet"
+                    cl?.startUpdatingLocation()
+                    btn.setTitle(NSLocalizedString("beer time", comment: ""), forState: .Normal)
+                    ca?.startRelativeAltitudeUpdatesToQueue(opQ, withHandler: { (altData, err) -> Void in
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            if err != nil {
+                                NSLog("relative altitude error \(err)")
+                                return
+                            }
+                            NSLog("altData \(altData)")
+                            self.current = (altData?.relativeAltitude.floatValue)!
+                            let cf = self.current*Float(m2fc)
+                            self.readout?.text = "\(cf)"
+                        })
+                    })
+                }
+            }
+            started = !started
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let tf = total*Float(m2fc)
+        readout?.text = "\(tf)"
         
         // background effect
         let xa = UIInterpolatingMotionEffect(keyPath: "center.x", type: .TiltAlongHorizontalAxis)
@@ -121,21 +161,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        
-        if CMAltimeter.isRelativeAltitudeAvailable() {
-            NSLog("relative altimeter is available")
-            
-            ca = CMAltimeter()
-            ca!.startRelativeAltitudeUpdatesToQueue(opQ, withHandler: { (altData, err) -> Void in
-                NSLog("altData: \(altData)")
-            })
-            
-        }
     }
     
     override func viewDidDisappear(animated: Bool) {
         super.viewDidDisappear(animated)
-        ca?.stopRelativeAltitudeUpdates()
     }
 
 }
