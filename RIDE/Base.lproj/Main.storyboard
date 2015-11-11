@@ -95,6 +95,10 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="mtnfront" destination="Rq6-Lq-Hit" id="Oj0-3O-0FZ"/>
+                        <outlet property="mtnleftbg" destination="VzP-T1-MJU" id="CKQ-vn-7ec"/>
+                        <outlet property="mtnleftmid" destination="reG-gG-ZW6" id="7ce-eX-PNT"/>
+                        <outlet property="mtnrightbg" destination="7rU-Fb-H5j" id="OSU-Qm-TkH"/>
+                        <outlet property="mtnrightmid" destination="IKm-qq-Gs0" id="uqh-T9-a5Z"/>
                         <outlet property="ridebg" destination="Ohb-Xo-rZ8" id="dIe-fh-7WF"/>
                     </connections>
                 </viewController>
